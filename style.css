@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+:root {
+  --color-primary: #020d18;
+  --color-secondary: #f1c40f;
+  --color-tertiary: #ff1919;
+  --color-active: #6aa84f;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+  padding: 55px auto;
+}
+
+header {
+  padding: 10 0;
+  text-align: center;
+  margin: auto 10px;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  height: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.bingo {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.bingo-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.num {
+  width: 25%;
+  justify-content: center;
+  text-align: center;
+}
+
+.letter-B {
+  color: #f4f4f4;
+  background-color: blue;
+  border: 1px transparent;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.letter-I,
+.letter-N,
+.letter-G {
+  color: #f4f4f4;
+  background-color: blue;
+}
+.letter-O {
+  color: #f4f4f4;
+  background-color: blue;
+  border: 1px transparent;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.active {
+  color: #f4f4f4;
+  background-color: var(--color-active);
+  border: 1px transparent;
+  border-radius: 5px;
+}
+
+.bingo-spin {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #f4f4f4;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 700s;
+}
+
+.btn:disabled {
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.spin {
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+}
+
+.reset {
+  background-color: var(--color-tertiary);
+  border: 1px solid var(--color-tertiary);
+}
+
+.bingo-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.bingo-card-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  width: 100%;
+  color: #f4f4f4;
+  background-color: blue;
+  text-align: center;
+}
+
+.bingo-card-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.bingo-pattern-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row-item {
+  height: 50px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.item-active {
+  color: #f4f4f4;
+  background-color: var(--color-active);
+}
+
+.free {
+  font-family: 'Cedarville Cursive', cursive;
+  font-weight: 900;
+}
+
+footer {
+  font-size: 0.8rem;
+  text-align: center;
+}
