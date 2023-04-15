@@ -1,7 +1,8 @@
 const bingoEl = document.querySelector('#bingo-table');
 const spinBtn = document.querySelector('#spin-btn');
+const resetBtn = document.querySelector('#reset-btn');
+const spinner = document.querySelector('.spinner');
 const bingoArr = ['B', 'I', 'N', 'G', 'O'];
-const bingoNum = [];
 
 function displayBingoTable() {
   let lastNum = 0;
@@ -27,24 +28,48 @@ function displayBingoTable() {
       bingoRow.appendChild(bingoItem);
       bingoEl.appendChild(bingoRow);
       lastNumSecondArr = j;
-      bingoNum.push(lastNum + j);
     }
     lastNum = i * lastNumSecondArr;
   }
 }
 
-function clickItem() {
-  const results = [12, 43, 12, 54];
-  console.log(bingoNum);
-
+function displayResult(results) {
   for (let r of results) {
-    for (let num of bingoNum) {
-      if (r === num) {
-        document.querySelector('.num').classList.add('active');
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j <= 15; j++) {
+        if (+bingoEl.children[i].children[j].dataset.id === r) {
+          bingoEl.children[i].children[j].classList.add('active');
+        }
       }
     }
   }
 }
 
+function resetDisplay() {
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j <= 15; j++) {
+      bingoEl.children[i].children[j].classList.remove('active');
+    }
+  }
+}
+
+function spin() {
+  const results = [];
+  const randomNum = Math.floor(Math.random() * 75);
+  results.push(randomNum);
+
+  spinBtn.style.display = 'none';
+  resetBtn.style.display = 'none';
+  spinner.style.display = 'block';
+
+  setTimeout(() => {
+    displayResult(results);
+    spinBtn.style.display = 'inline-block';
+    resetBtn.style.display = 'inline-block';
+    spinner.style.display = 'none';
+  }, 2000);
+}
+
 window.addEventListener('DOMContentLoaded', displayBingoTable);
-spinBtn.addEventListener('click', clickItem);
+spinBtn.addEventListener('click', spin);
+resetBtn.addEventListener('click', resetDisplay);
