@@ -12,6 +12,7 @@
     <header>
       <h1>Bingo</h1>
     </header>
+    
     <div class="container">
       <div class="bingo" id="bingo-table"></div>
 
@@ -19,10 +20,11 @@
         <button id="spin-btn" class="btn spin">SPIN</button>
         <button id="reset-btn" class="btn reset">RESET</button>
         <div class="spinner">
-          <div class="loader">Loading...</div>
+          <div class="loader"></div>
         </div>
       </div>
 
+     
       <div class="bingo-card">
         <div class="bingo-card-title">
           <div class="title">B</div>
@@ -34,10 +36,10 @@
         <div class="bingo-card-body" id="bingo-card-body"></div>
       </div>
       
-      <footer>
-        Bingo &copy; Gerson 2023
-      </footer>
     </div>
+    <footer>
+      <span>BINGO</span> &copy; Gerson <span id="year"></span>
+    </footer>
     <script src="bingo.js"></script>
   </body>
 </html>

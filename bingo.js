@@ -3,6 +3,7 @@ const spinBtn = document.querySelector('#spin-btn');
 const resetBtn = document.querySelector('#reset-btn');
 const spinner = document.querySelector('.spinner');
 const bingoCard = document.querySelector('#bingo-card-body');
+const yearEl = document.querySelector('#year');
 const bingoLoop = ['B', 'I', 'N', 'G', 'O'];
 let results = [];
 
@@ -124,9 +125,15 @@ function clearPattern() {
   }
 }
 
-window.addEventListener('DOMContentLoaded', displayBingoTable);
-window.addEventListener('DOMContentLoaded', displayBingoCard);
-spinBtn.addEventListener('click', spin);
-resetBtn.addEventListener('click', resetBingo);
-bingoCard.addEventListener('click', addToggleToPattern);
-console.log(results);
+function init() {
+  const year = new Date().getFullYear();
+  yearEl.textContent = year;
+
+  window.addEventListener('DOMContentLoaded', displayBingoTable);
+  window.addEventListener('DOMContentLoaded', displayBingoCard);
+  spinBtn.addEventListener('click', spin);
+  resetBtn.addEventListener('click', resetBingo);
+  bingoCard.addEventListener('click', addToggleToPattern);
+}
+
+init();
