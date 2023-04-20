@@ -4,4 +4,4 @@
 
   <img src="./assets/bingo-app-screen.png" width="500px"/>
 
-  DEMO: https://bingo-app-three.vercel.app/
+  DEMO: https://bingo-app-eta.vercel.app/
